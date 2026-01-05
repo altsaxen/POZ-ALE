@@ -1,0 +1,1579 @@
+{
+  "measuredConversionEfficiency": null,
+  "_init": true,
+  "batchYeasts": [
+    {
+      "fermentsAll": false,
+      "description": "",
+      "manufacturingDate": null,
+      "checked": true,
+      "minTemp": null,
+      "amount": 1,
+      "_timestamp_ms": 1732550687336,
+      "removedAmount": 1,
+      "inventoryUnit": "pkg",
+      "_timestamp": {
+        "seconds": 1732550687,
+        "nanoseconds": 336000000
+      },
+      "maxTemp": null,
+      "_id": "MDNaL6g0QXGRO0SlXv2LQZCZvPNcdO",
+      "hidden": false,
+      "removedUnit": "pkg",
+      "unit": "pkg",
+      "notInRecipe": false,
+      "totalCost": 0,
+      "minAttenuation": null,
+      "maxAttenuation": null,
+      "productId": "",
+      "name": "Ebbegarden",
+      "userNotes": "",
+      "_created": {
+        "seconds": 1732550687,
+        "nanoseconds": 337000000
+      },
+      "type": "Ale",
+      "inventory": 1,
+      "removedFromInventory": true,
+      "bestBeforeDate": null,
+      "maxAbv": null,
+      "laboratory": "Kveik Yeastery",
+      "form": "Dry",
+      "displayAmount": 0,
+      "_version": "2.11.5",
+      "costPerAmount": 0,
+      "attenuation": 75
+    },
+    {
+      "_id": "new-38ulADnwDOE8Ocxtja3wX8zxmXnoEB",
+      "inventory": 1984,
+      "starterGramExtract": 150,
+      "amount": 1,
+      "supplier": null,
+      "displayAmount": 1,
+      "attenuation": 85,
+      "flocculation": "Low",
+      "alpha": null,
+      "_version": "2.8.6",
+      "maxTemp": 40,
+      "name": "Svartavinbär",
+      "hidden": false,
+      "fermentsAll": false,
+      "maxAbv": 15,
+      "form": "Slurry",
+      "notInRecipe": false,
+      "_timestamp": {
+        "seconds": 1670076407,
+        "nanoseconds": 539000000
+      },
+      "laboratory": "Stordals Hage",
+      "costPerAmount": 0,
+      "type": "Other",
+      "minTemp": 5,
+      "starterSize": 1.5,
+      "userNotes": "Harvested from black currants June 2018, re-pitched and fed over and over since then.\nI juni 2018 plockade jag en ordentlig mängd svartavinbär att ha i en laköl. En del av bären tog jag tillsammans med humlad vört från en extra lakning och jäste i en 5l plastdunk. När det hade jäst klart tog jag bottensatsen och förde över på mindre burkar som fick jäsa. När jag fått upp tillräckligt med bottensats började jag använda jästen och föra över från gång till gång.  Efter hand har den stabiliserats sig mer och mer samt ökat i förjäsningsgrad. Har gjort några försök med att skörda kraüsen, men det har misslyckats. Våren 2020 är det nästan aldrig mer än några millimeter kraüsen. ",
+      "inventoryUnit": "ml",
+      "productId": "SH #1",
+      "_timestamp_ms": 1670076407539,
+      "starter": false,
+      "_created": {
+        "seconds": 1547962271,
+        "nanoseconds": 810000000
+      },
+      "totalCost": 0,
+      "unit": "ml"
+    }
+  ],
+  "measuredBatchSize": 28,
+  "measuredMashEfficiency": 69.98,
+  "primingSugarEquiv": 157.26932392301097,
+  "estimatedFg": 1.002,
+  "fermentationStartDateSet": true,
+  "batchNotes": "Gran blev dålig. Jäste inte och smakar infekterad. \nSH#1 FG 1.002\nEbbegarden FG 1.008\n\nEbbegarden jäser tryck dåligt och smakar lite för jästig. Väntade för länge med flasktappning.",
+  "hidden": false,
+  "bottlingDateSet": false,
+  "fermentationControllerEnabled": false,
+  "batchMiscs": [
+    {
+      "_id": "default-3b1827",
+      "unit": "g",
+      "totalCost": 3,
+      "_timestamp": {
+        "seconds": 1728722849,
+        "nanoseconds": 139000000
+      },
+      "displayAmount": 0,
+      "hidden": false,
+      "checked": true,
+      "removedUnit": "g",
+      "removedAmount": 5,
+      "timeIsDays": false,
+      "time": null,
+      "inventory": -2.41,
+      "notInRecipe": false,
+      "costPerAmount": 0.6,
+      "waterAdjustment": true,
+      "type": "Water Agent",
+      "_version": "2.11.4",
+      "_timestamp_ms": 1728722849139,
+      "_created": {
+        "seconds": 1551531608,
+        "nanoseconds": 217000000
+      },
+      "name": "Calcium Chloride (CaCl2)",
+      "inventoryUnit": "g",
+      "use": "Mash",
+      "amount": 5,
+      "removedFromInventory": true
+    },
+    {
+      "amount": 5,
+      "waterAdjustment": true,
+      "checked": true,
+      "displayAmount": 0,
+      "_timestamp_ms": 1732550740488,
+      "type": "Water Agent",
+      "removedUnit": "ml",
+      "name": "Lactic Acid",
+      "inventory": 109.5,
+      "_id": "default-07adb1",
+      "_version": "2.11.5",
+      "totalCost": 1.5,
+      "timeIsDays": false,
+      "unit": "ml",
+      "removedAmount": 5,
+      "_timestamp": {
+        "seconds": 1732550740,
+        "nanoseconds": 488000000
+      },
+      "inventoryUnit": "ml",
+      "notInRecipe": false,
+      "costPerAmount": 0.3,
+      "use": "Mash",
+      "_created": {
+        "seconds": 1547962010,
+        "nanoseconds": 634000000
+      },
+      "removedFromInventory": true,
+      "hidden": false,
+      "time": null
+    },
+    {
+      "_timestamp_ms": 1732550742007,
+      "totalCost": 2.8080000000000003,
+      "_timestamp": {
+        "seconds": 1732550742,
+        "nanoseconds": 7000000
+      },
+      "amount": 2.6,
+      "removedFromInventory": true,
+      "amountPerL": 0.1,
+      "inventory": 17.4,
+      "removedAmount": 2.6,
+      "_version": "2.11.5",
+      "_id": "default-yn1j28sf",
+      "use": "Boil",
+      "time": 15,
+      "costPerAmount": 1.08,
+      "checked": true,
+      "removedUnit": "g",
+      "hidden": false,
+      "unit": "g",
+      "notInRecipe": false,
+      "type": "Other",
+      "_created": {
+        "seconds": 1550238370,
+        "nanoseconds": 433000000
+      },
+      "displayAmount": 0,
+      "timeIsDays": false,
+      "inventoryUnit": "g",
+      "name": "Yeast Nutrients"
+    }
+  ],
+  "_type": "batch",
+  "estimatedBuGuRatio": 0.54,
+  "brewControllerEnabled": false,
+  "_timestamp": "2026-01-05T16:22:10.158Z",
+  "boilStepsCount": 3,
+  "cost": {
+    "fermentables": 68.7,
+    "hops": 19.75,
+    "miscs": 7.31,
+    "yeasts": 0,
+    "total": 95.75,
+    "perBottlingLiter": 3.68,
+    "fermentablesShare": 0.7175,
+    "hopsShare": 0.2063,
+    "miscsShare": 0.0763,
+    "yeastsShare": 0
+  },
+  "estimatedTotalGravity": 1.044,
+  "_created": {
+    "seconds": 1764664504,
+    "nanoseconds": 522000000
+  },
+  "_timestamp_ms": 1767630130158,
+  "_version": "2.20.3",
+  "boilSteps": [
+    {
+      "time": 60,
+      "name": "5g Amarillo"
+    },
+    {
+      "time": 25,
+      "name": "20g Amarillo"
+    },
+    {
+      "time": 15,
+      "name": "2.6g Yeast Nutrients"
+    }
+  ],
+  "events": [
+    {
+      "notifyTime": 1754726400000,
+      "time": 1754726400000,
+      "dayEvent": true,
+      "title": "Brew Day - APA #83 (X83 APA)",
+      "eventType": "event-batch-brew-day",
+      "descriptionHTML": "Brew Day (X83 APA)",
+      "active": false,
+      "description": "Brew Day (X83 APA)",
+      "eventText": "Brew Day"
+    },
+    {
+      "dayEvent": true,
+      "descriptionHTML": "You have a planned batch upcoming (X83 APA)",
+      "eventText": "Brew Day &mdash; Reminder",
+      "notifyTime": 1754640000000,
+      "time": 1754640000000,
+      "eventType": "event-batch-brew-day-reminder",
+      "title": "Brew Day - Reminder - APA #83 (X83 APA)",
+      "active": false,
+      "description": "You have a planned batch upcoming (X83 APA)"
+    },
+    {
+      "time": 1756022400000,
+      "dayEvent": true,
+      "descriptionHTML": "Bottling Day (X83 APA)",
+      "eventType": "event-batch-bottling-day",
+      "title": "Bottling Day - APA #83 (X83 APA)",
+      "active": true,
+      "eventText": "Bottling Day",
+      "description": "Bottling Day (X83 APA)"
+    },
+    {
+      "descriptionHTML": "Fermentation Profile Step:<br>Primary (Fermentation) @ 20 °C",
+      "description": "Fermentation Profile Step: Primary (Fermentation) @ 20 °C",
+      "active": true,
+      "eventType": "event-batch-ferm-step",
+      "time": 1754812800000,
+      "eventText": "Primary (Fermentation) @ 20 °C",
+      "dayEvent": false,
+      "title": "Fermentation Step - APA #83 (X83 APA)"
+    }
+  ],
+  "brewDate": 1754690400000,
+  "measuredAttenuation": 95.3,
+  "measuredBoilSize": 35,
+  "measuredEfficiency": 66.99,
+  "measuredKettleSize": 30,
+  "measuredPostBoilGravity": 1.042,
+  "name": "APA",
+  "estimatedIbu": 24,
+  "batchHops": [
+    {
+      "amount": 25,
+      "inventory": 175,
+      "substitutes": "",
+      "removedAmount": 25,
+      "manufacturingDate": null,
+      "removedFromInventory": true,
+      "checked": true,
+      "use": "Boil",
+      "usedIn": "",
+      "ibu": 0,
+      "_id": "default-620d1be4",
+      "myrcene": null,
+      "beta": null,
+      "displayAmount": 0,
+      "_timestamp": {
+        "seconds": 1732550613,
+        "nanoseconds": 83000000
+      },
+      "notes": "",
+      "origin": "Germany",
+      "bestBeforeDate": null,
+      "hsi": null,
+      "type": "Pellet",
+      "usage": "Aroma",
+      "alpha": 13.2,
+      "humulene": null,
+      "temp": null,
+      "oil": null,
+      "caryophyllene": null,
+      "userNotes": "",
+      "_created": {
+        "seconds": 1551531328,
+        "nanoseconds": 265000000
+      },
+      "totalCost": 19.75,
+      "_timestamp_ms": 1732550613083,
+      "name": "Amarillo",
+      "farnesene": null,
+      "time": 60,
+      "hidden": false,
+      "year": null,
+      "cohumulone": null,
+      "notInRecipe": false,
+      "costPerAmount": 0.79,
+      "_version": "2.11.5"
+    }
+  ],
+  "batchFermentables": [
+    {
+      "notFermentable": false,
+      "totalCost": 0,
+      "amount": 0.1,
+      "_id": "default-de1e508",
+      "moisture": 3.6,
+      "type": "Grain",
+      "notes": "Very dark caramel malt with aromatic properties. Adds deep red color and aroma. Amber ales, dark lagers, bocks. Substitute for \"Belgian Special B\" or 120L caramel malts.",
+      "removedAmount": 0.1,
+      "displayAmount": 0,
+      "name": "Caraaroma",
+      "color": 178,
+      "diastaticPower": 0,
+      "coarseFineDiff": 0,
+      "acid": 0,
+      "_timestamp_ms": 1749116154126,
+      "ibuPerAmount": 0,
+      "protein": 0,
+      "_timestamp": {
+        "seconds": 1749116154,
+        "nanoseconds": 126000000
+      },
+      "inventory": 0.8,
+      "_created": {
+        "seconds": 1749116154,
+        "nanoseconds": 126000000
+      },
+      "maxInBatch": 15,
+      "checked": true,
+      "notInRecipe": false,
+      "potential": 1.034,
+      "_version": "2.11.6",
+      "removedFromInventory": true,
+      "potentialPercentage": 73.58,
+      "costPerAmount": 0,
+      "hidden": false,
+      "supplier": "Weyermann",
+      "origin": "Germany"
+    },
+    {
+      "hidden": false,
+      "type": "Sugar",
+      "amount": 0.165,
+      "supplier": "Dan Sukker",
+      "inventory": 0.95,
+      "notFermentable": null,
+      "_id": "default-132c22b",
+      "potentialPercentage": 100,
+      "notInRecipe": false,
+      "_timestamp": {
+        "seconds": 1725281206,
+        "nanoseconds": 312000000
+      },
+      "name": "Minibit-/Mockabitsocker",
+      "displayAmount": 0.165,
+      "_timestamp_ms": 1725281206312,
+      "costPerAmount": 31,
+      "potential": 1.046,
+      "grainCategory": null,
+      "attenuation": 1.22,
+      "_created": {
+        "seconds": 1547962284,
+        "nanoseconds": 130000000
+      },
+      "_version": "2.11.1",
+      "ibuPerAmount": null,
+      "notes": "",
+      "totalCost": 5.115,
+      "origin": "",
+      "color": 1
+    },
+    {
+      "grainCategory": "Base (Pilsner)",
+      "costPerAmount": 11.56,
+      "notes": "",
+      "_version": "2.11.5",
+      "manufacturingDate": null,
+      "hidden": false,
+      "potentialPercentage": 81.5,
+      "percentage": 71.43,
+      "bestBeforeDate": null,
+      "_timestamp": {
+        "seconds": 1734786113,
+        "nanoseconds": 751000000
+      },
+      "potential": 1.03749,
+      "color": 2,
+      "cgdb": null,
+      "moisture": null,
+      "usedIn": "",
+      "addAfterBoil": "FALSE",
+      "alpha": null,
+      "removedAmount": 5.5,
+      "acid": null,
+      "_created": {
+        "seconds": 1576318729,
+        "nanoseconds": 632000000
+      },
+      "name": "Viking Pilsner Malt",
+      "origin": "Finland, Denmark, Sweden, Poland",
+      "type": "Grain",
+      "_timestamp_ms": 1734786113751,
+      "checked": true,
+      "notFermentable": false,
+      "coarseFineDiff": null,
+      "protein": null,
+      "diastaticPower": null,
+      "unit": null,
+      "substitutes": "",
+      "supplier": "Viking Malt",
+      "notInRecipe": false,
+      "maxInBatch": null,
+      "_id": "new-9ndwR01XFBzf5iyEor3ymb0zQMTu44",
+      "laboratory": null,
+      "totalCost": 63.580000000000005,
+      "userNotes": "",
+      "fan": null,
+      "removedFromInventory": true,
+      "inventory": 2.25,
+      "amount": 5.5,
+      "inventoryUnit": null,
+      "displayAmount": 0,
+      "friability": null,
+      "fgdb": null
+    }
+  ],
+  "bottlingDate": 1756048774835,
+  "estimatedColor": 6.4,
+  "measuredAbv": 5.5,
+  "carbonationForce": null,
+  "_id": "ONhkQAWAvLsORD8TCi95ZvokF27FMA",
+  "batchNo": 83,
+  "batchMiscsLocal": [],
+  "mashStepsCount": 1,
+  "hideBatchEvents": true,
+  "notes": [
+    {
+      "type": "statusChanged",
+      "status": "Conditioning",
+      "note": "",
+      "timestamp": 1757446326557
+    },
+    {
+      "status": "Fermenting",
+      "note": "",
+      "type": "statusChanged",
+      "timestamp": 1754839174465
+    }
+  ],
+  "status": "Conditioning",
+  "fermentationStartDate": 1754839174835,
+  "measuredKettleEfficiency": 66.53,
+  "measuredFg": 1.002,
+  "estimatedRbRatio": 0.64,
+  "batchFermentablesLocal": [],
+  "carbonationType": "Sugar",
+  "batchYeastsLocal": [],
+  "_archived": false,
+  "estimatedOg": 1.042,
+  "devices": {
+    "smartPid": {
+      "items": [],
+      "enabled": false,
+      "brewDeviceId": null
+    },
+    "brewPiLess": {
+      "items": [],
+      "enabled": true
+    },
+    "myBrewbot": {
+      "enabled": true,
+      "items": []
+    },
+    "stream": {
+      "enabled": true,
+      "items": []
+    },
+    "tilt": {
+      "items": [],
+      "mode": "default",
+      "temp": true,
+      "gravity": true,
+      "enabled": true
+    },
+    "raptCloud": {
+      "items": [],
+      "enabled": true
+    },
+    "plaatoAirlock": {
+      "items": [],
+      "enabled": true
+    },
+    "floatHydrometer": {
+      "enabled": true,
+      "items": []
+    },
+    "iSpindel": {
+      "enabled": true,
+      "items": []
+    },
+    "floatyHydrometer": {
+      "enabled": true,
+      "items": []
+    },
+    "gfcc": {
+      "brewDeviceId": null,
+      "items": [],
+      "enabled": false
+    },
+    "plaatoKeg": {
+      "enabled": true,
+      "items": []
+    }
+  },
+  "measuredOg": 1.042,
+  "recipe": {
+    "name": "X83 APA",
+    "manualFg": false,
+    "style": {
+      "category": "Pale American Ale",
+      "buGuMin": 0.33,
+      "carbMax": 3,
+      "styleGuide": "BJCP 2021",
+      "ogMin": 1.038,
+      "categoryNumber": "18",
+      "lovibondMax": 6,
+      "colorMin": 3,
+      "_id": "default-57",
+      "ibuMax": 28,
+      "fgMin": 1.008,
+      "lovibondMin": 3,
+      "colorMax": 6,
+      "rbrMax": 0.61,
+      "ogMax": 1.054,
+      "type": "Pale Ale",
+      "carbMin": 2.4,
+      "rbrMin": 0.33,
+      "abvMin": 3.8,
+      "styleLetter": "A",
+      "name": "Blonde Ale",
+      "abvMax": 5.5,
+      "ibuMin": 15,
+      "buGuMax": 0.61,
+      "fgMax": 1.013
+    },
+    "thumb": null,
+    "author": "Stordals Hage Farmhouse Ales",
+    "_public": false,
+    "_timestamp": {
+      "seconds": 1764664504,
+      "nanoseconds": 521000000
+    },
+    "styleColor": false,
+    "attenuation": 0.859,
+    "img": null,
+    "_id": "cvvqKZG8lxeommKznytuu9fRxpPl1C",
+    "_created": {
+      "seconds": 1754677333,
+      "nanoseconds": 948000000
+    },
+    "styleConformity": false,
+    "yeasts": [
+      {
+        "productId": "",
+        "minTemp": null,
+        "_version": "2.11.5",
+        "minAttenuation": null,
+        "bestBeforeDate": null,
+        "type": "Ale",
+        "unit": "pkg",
+        "laboratory": "Kveik Yeastery",
+        "userNotes": "",
+        "description": "",
+        "_timestamp": {
+          "seconds": 1732550687,
+          "nanoseconds": 336000000
+        },
+        "hidden": false,
+        "inventory": 2,
+        "form": "Dry",
+        "maxTemp": null,
+        "fermentsAll": false,
+        "_id": "MDNaL6g0QXGRO0SlXv2LQZCZvPNcdO",
+        "amount": 1,
+        "attenuation": 75,
+        "_created": {
+          "seconds": 1732550687,
+          "nanoseconds": 337000000
+        },
+        "_timestamp_ms": 1732550687336,
+        "maxAttenuation": null,
+        "name": "Ebbegarden",
+        "manufacturingDate": null,
+        "maxAbv": null
+      },
+      {
+        "displayAmount": 500,
+        "inventoryUnit": "ml",
+        "flocculation": "Low",
+        "form": "Slurry",
+        "_created": {
+          "seconds": 1547962271,
+          "nanoseconds": 810000000
+        },
+        "amount": 1,
+        "alpha": null,
+        "fermentsAll": false,
+        "type": "Other",
+        "maxAbv": 15,
+        "supplier": null,
+        "starterGramExtract": 150,
+        "maxAttenuation": null,
+        "starterSize": 1.5,
+        "maxTemp": 40,
+        "userNotes": "Harvested from black currants June 2018, re-pitched and fed over and over since then.\nI juni 2018 plockade jag en ordentlig mängd svartavinbär att ha i en laköl. En del av bären tog jag tillsammans med humlad vört från en extra lakning och jäste i en 5l plastdunk. När det hade jäst klart tog jag bottensatsen och förde över på mindre burkar som fick jäsa. När jag fått upp tillräckligt med bottensats började jag använda jästen och föra över från gång till gång.  Efter hand har den stabiliserats sig mer och mer samt ökat i förjäsningsgrad. Har gjort några försök med att skörda kraüsen, men det har misslyckats. Våren 2020 är det nästan aldrig mer än några millimeter kraüsen. ",
+        "hidden": false,
+        "manufacturingDate": null,
+        "bestBeforeDate": null,
+        "minTemp": 5,
+        "notInRecipe": false,
+        "minAttenuation": null,
+        "_timestamp_ms": 1670076407539,
+        "description": "",
+        "_version": "2.8.6",
+        "unit": "ml",
+        "attenuation": 85,
+        "name": "Svartavinbär",
+        "_id": "new-38ulADnwDOE8Ocxtja3wX8zxmXnoEB",
+        "productId": "SH #1",
+        "laboratory": "Stordals Hage",
+        "_timestamp": {
+          "seconds": 1670076407,
+          "nanoseconds": 539000000
+        },
+        "inventory": 1985
+      }
+    ],
+    "primaryTemp": 20,
+    "fg": 1.006,
+    "fermentablesTotalAmount": 5.765,
+    "carbonation": 2.4,
+    "styleOg": true,
+    "efficiency": 67,
+    "styleBuGu": true,
+    "styleCarb": true,
+    "batchSize": 28,
+    "yeastToleranceExceededBy": null,
+    "fgFormula": "normal",
+    "searchTags": [
+      "Brewed"
+    ],
+    "fermentableIbu": 0,
+    "path": "/",
+    "abv": 4.99,
+    "preBoilGravity": 1.037,
+    "boilSize": 34.71,
+    "hops": [
+      {
+        "_created": {
+          "seconds": 1551531328,
+          "nanoseconds": 265000000
+        },
+        "myrcene": null,
+        "beta": null,
+        "temp": null,
+        "alpha": 13.2,
+        "caryophyllene": null,
+        "bestBeforeDate": null,
+        "hsi": null,
+        "type": "Pellet",
+        "_timestamp": {
+          "seconds": 1732550613,
+          "nanoseconds": 83000000
+        },
+        "hidden": false,
+        "farnesene": null,
+        "origin": "Germany",
+        "notes": "",
+        "_version": "2.11.5",
+        "usage": "Aroma",
+        "costPerAmount": 0.79,
+        "_id": "default-620d1be4",
+        "_timestamp_ms": 1732550613083,
+        "actualTime": null,
+        "manufacturingDate": null,
+        "ibu": 6.4,
+        "usedIn": "",
+        "humulene": null,
+        "name": "Amarillo",
+        "substitutes": "",
+        "userNotes": "",
+        "cohumulone": null,
+        "amount": 5,
+        "oil": null,
+        "inventory": 200,
+        "time": 60,
+        "year": null,
+        "use": "Boil"
+      },
+      {
+        "caryophyllene": null,
+        "userNotes": "",
+        "name": "Amarillo",
+        "type": "Pellet",
+        "ibu": 17.5,
+        "amount": 20,
+        "usage": "Aroma",
+        "beta": null,
+        "hidden": false,
+        "notes": "",
+        "myrcene": null,
+        "inventory": 200,
+        "manufacturingDate": null,
+        "cohumulone": null,
+        "oil": null,
+        "origin": "Germany",
+        "_version": "2.11.5",
+        "substitutes": "",
+        "actualTime": null,
+        "time": 25,
+        "year": null,
+        "bestBeforeDate": null,
+        "alpha": 13.2,
+        "_id": "default-620d1be4",
+        "usedIn": "",
+        "humulene": null,
+        "_timestamp": {
+          "seconds": 1732550613,
+          "nanoseconds": 83000000
+        },
+        "_timestamp_ms": 1732550613083,
+        "_created": {
+          "seconds": 1551531328,
+          "nanoseconds": 265000000
+        },
+        "temp": null,
+        "farnesene": null,
+        "use": "Boil",
+        "costPerAmount": 0.79,
+        "hsi": null
+      }
+    ],
+    "defaults": {
+      "temp": "c",
+      "hop": "g",
+      "abv": "simple",
+      "pressure": "bar",
+      "ibu": "tinseth",
+      "volume": "l",
+      "altitude": "m",
+      "grainColor": "default",
+      "gravity": "sgplato",
+      "preferred": "metric",
+      "color": "ebc",
+      "weight": "kg",
+      "carbonation": "vol",
+      "attenuation": "normal"
+    },
+    "hidden": false,
+    "firstWortGravity": null,
+    "hopStandMinutes": 0,
+    "buGuRatio": 0.54,
+    "equipment": {
+      "hopstandTemperature": 80,
+      "calcBoilVolume": true,
+      "_meta": {
+        "mashEfficiencyIsCalculated": true,
+        "efficiencyIsCalculated": true
+      },
+      "brewhouseEfficiency": 66,
+      "fermenterLoss": 2,
+      "hidden": false,
+      "grainAbsorptionRate": 0.8,
+      "evaporationRate": 0.08643042350907519,
+      "bottlingVolume": 26,
+      "boilTime": 90,
+      "_id": "default-bz-rb-35-002",
+      "mashWaterMax": 45,
+      "mashWaterFormula": "BoilVolumeColdL + (GrainAmountKg * GrainAbsorptionRate) + MashTunLossL",
+      "waterGrainRatio": 3,
+      "fermenterLossEstimate": 0,
+      "mashWaterVolumeLimitEnabled": true,
+      "spargeWaterFormula": "0",
+      "spargeWaterOverflow": "Top-Up",
+      "aromaHopUtilization": 0.23,
+      "fermenterVolume": 28,
+      "waterCalculation": "No Sparge",
+      "name": "BrewZilla / RoboBrew 35L",
+      "fermenterVolumeBeforeTopUp": 28,
+      "trubChillerLoss": 1,
+      "calcMashEfficiency": true,
+      "hopUtilization": 1,
+      "efficiency": 67,
+      "mashTunLoss": 0,
+      "postBoilKettleVol": 30.208333333333336,
+      "efficiencyType": "Fermenter",
+      "batchSize": 28,
+      "mashTunDeadSpace": 6.75,
+      "calcAromaHopUtilization": true,
+      "mashEfficiency": 69.4,
+      "boilSize": 34.71,
+      "boilOffPerHr": 3
+    },
+    "fgEstimated": 1.006,
+    "postBoilGravity": 1.042007085,
+    "og": 1.042007085,
+    "carbonationStyle": {
+      "carbMax": 3,
+      "carbMin": 2.4,
+      "name": "Blonde Ale"
+    },
+    "_ev": 2,
+    "nutrition": {
+      "calories": {
+        "alcohol": 28.069032326388122,
+        "carbs": 12.631683148487106,
+        "total": 40.70071547487523,
+        "kJ": 170.29179354687798
+      },
+      "carbs": {
+        "total": 3.184881473777415
+      }
+    },
+    "styleFg": false,
+    "diastaticPower": 0,
+    "styleAbv": true,
+    "_timestamp_ms": 1764664504521,
+    "color": 6.4,
+    "mash": {
+      "_id": "default-hf-mo",
+      "steps": [
+        {
+          "name": "",
+          "stepTime": 60,
+          "type": "Temperature",
+          "rampTime": null,
+          "stepTemp": 68,
+          "displayStepTemp": 68
+        }
+      ],
+      "name": "High fermentability plus mash out"
+    },
+    "_version": "2.20.3",
+    "_uid": "EST2Cswid4Vpfwu3dV3d7VW9L752",
+    "folderRefs": [
+      "recipe_root_folder"
+    ],
+    "hopsTotalAmount": 25,
+    "ibu": 23.9,
+    "_origin": null,
+    "mashEfficiency": 69.4,
+    "miscs": [
+      {
+        "costPerAmount": 0.6,
+        "_timestamp_ms": 1668266954624,
+        "use": "Mash",
+        "_id": "default-3b1827",
+        "unit": "g",
+        "name": "Calcium Chloride (CaCl2)",
+        "concentration": null,
+        "time": null,
+        "inventory": 7.59,
+        "amount": 5,
+        "timeIsDays": false,
+        "waterAdjustment": true,
+        "type": "Water Agent",
+        "_version": "2.8.6",
+        "_timestamp": {
+          "seconds": 1668266954,
+          "nanoseconds": 624000000
+        },
+        "hidden": false,
+        "_created": {
+          "seconds": 1551531608,
+          "nanoseconds": 217000000
+        }
+      },
+      {
+        "inventory": 124.5,
+        "costPerAmount": 0.3,
+        "use": "Mash",
+        "_timestamp_ms": 1668266955681,
+        "_timestamp": {
+          "seconds": 1668266955,
+          "nanoseconds": 681000000
+        },
+        "_created": {
+          "seconds": 1547962010,
+          "nanoseconds": 634000000
+        },
+        "timeIsDays": false,
+        "amount": 5,
+        "waterAdjustment": true,
+        "concentration": 80,
+        "_version": "2.8.6",
+        "name": "Lactic Acid",
+        "unit": "ml",
+        "type": "Water Agent",
+        "time": null,
+        "hidden": false,
+        "_id": "default-07adb1"
+      },
+      {
+        "inventory": 1.77,
+        "_timestamp": {
+          "seconds": 1670687218,
+          "nanoseconds": 21000000
+        },
+        "use": "Boil",
+        "_created": {
+          "seconds": 1550238370,
+          "nanoseconds": 433000000
+        },
+        "timeIsDays": false,
+        "_timestamp_ms": 1670687218021,
+        "amountPerL": 0.1,
+        "time": 15,
+        "type": "Other",
+        "name": "Yeast Nutrients",
+        "useFor": "",
+        "unit": "g",
+        "notes": "",
+        "_version": "2.8.6",
+        "manufacturingDate": null,
+        "amount": 2.6,
+        "_id": "default-yn1j28sf",
+        "hidden": false,
+        "substitutes": "",
+        "costPerAmount": 1.08,
+        "userNotes": "",
+        "bestBeforeDate": null
+      }
+    ],
+    "data": {
+      "mashFermentablesAmount": 5.6,
+      "allDiastaticPower": false,
+      "totalDiastaticPower": 0,
+      "mashFermentables": [
+        {
+          "_timestamp_ms": 1734786113751,
+          "manufacturingDate": null,
+          "amount": 5.5,
+          "potential": 1.03749,
+          "inventoryUnit": null,
+          "inventory": 9.5,
+          "fan": null,
+          "notInRecipe": false,
+          "supplier": "Viking Malt",
+          "cgdb": null,
+          "substitutes": "",
+          "addAfterBoil": "FALSE",
+          "laboratory": null,
+          "fgdb": null,
+          "origin": "Finland, Denmark, Sweden, Poland",
+          "unit": null,
+          "displayAmount": 3.5,
+          "acid": null,
+          "type": "Grain",
+          "usedIn": "",
+          "name": "Viking Pilsner Malt",
+          "coarseFineDiff": null,
+          "bestBeforeDate": null,
+          "_version": "2.11.5",
+          "protein": null,
+          "friability": null,
+          "moisture": null,
+          "userNotes": "",
+          "costPerAmount": 11.56,
+          "hidden": false,
+          "_created": {
+            "seconds": 1576318729,
+            "nanoseconds": 632000000
+          },
+          "notes": "",
+          "_timestamp": {
+            "seconds": 1734786113,
+            "nanoseconds": 751000000
+          },
+          "color": 2,
+          "potentialPercentage": 81.5,
+          "diastaticPower": null,
+          "alpha": null,
+          "maxInBatch": null,
+          "_id": "new-9ndwR01XFBzf5iyEor3ymb0zQMTu44",
+          "percentage": 95.4,
+          "grainCategory": "Base (Pilsner)",
+          "notFermentable": false
+        },
+        {
+          "manufacturingDate": null,
+          "friability": null,
+          "inventory": 0.9,
+          "diastaticPower": 0,
+          "potentialPercentage": 73.58,
+          "ibuPerAmount": 0,
+          "supplier": "Weyermann",
+          "_created": {
+            "seconds": 1749116154,
+            "nanoseconds": 126000000
+          },
+          "userNotes": "",
+          "usedIn": "",
+          "substitutes": "",
+          "_version": "2.11.6",
+          "fgdb": null,
+          "moisture": 3.6,
+          "coarseFineDiff": 0,
+          "amount": 0.1,
+          "bestBeforeDate": null,
+          "fan": null,
+          "_timestamp": {
+            "seconds": 1749116154,
+            "nanoseconds": 126000000
+          },
+          "_timestamp_ms": 1749116154126,
+          "hidden": false,
+          "color": 178,
+          "percentage": 1.73,
+          "origin": "Germany",
+          "maxInBatch": 15,
+          "type": "Grain",
+          "grainCategory": "Crystal/Caramel",
+          "notes": "Very dark caramel malt with aromatic properties. Adds deep red color and aroma. Amber ales, dark lagers, bocks. Substitute for \"Belgian Special B\" or 120L caramel malts.",
+          "name": "Caraaroma",
+          "protein": 0,
+          "_id": "default-de1e508",
+          "acid": 0,
+          "cgdb": null,
+          "notFermentable": false,
+          "potential": 1.034,
+          "costPerAmount": null
+        }
+      ],
+      "otherFermentablesAmount": 0.165,
+      "otherFermentables": [
+        {
+          "supplier": "Dan Sukker",
+          "cgdb": null,
+          "moisture": null,
+          "use": "Bottling",
+          "amount": 0.165,
+          "_created": {
+            "seconds": 1547962284,
+            "nanoseconds": 130000000
+          },
+          "manufacturingDate": null,
+          "acid": null,
+          "name": "Minibit-/Mockabitsocker",
+          "attenuation": 1.22,
+          "substitutes": "",
+          "_timestamp_ms": 1725281206312,
+          "percentage": 2.86,
+          "ibuPerAmount": null,
+          "hidden": false,
+          "protein": null,
+          "fan": null,
+          "notFermentable": false,
+          "origin": "",
+          "_id": "default-132c22b",
+          "friability": null,
+          "bestBeforeDate": null,
+          "maxInBatch": null,
+          "inventory": 0.95,
+          "diastaticPower": null,
+          "_timestamp": {
+            "seconds": 1725281206,
+            "nanoseconds": 312000000
+          },
+          "costPerAmount": 31,
+          "potentialPercentage": 100,
+          "potential": 1.046,
+          "fgdb": null,
+          "color": 1,
+          "notes": "",
+          "type": "Sugar",
+          "userNotes": "",
+          "_version": "2.11.1",
+          "usedIn": "",
+          "grainCategory": null,
+          "coarseFineDiff": null
+        }
+      ],
+      "mashWaterAmount": 37.8,
+      "spargeWaterAmount": 0,
+      "mashVolumeSurplus": 0,
+      "topUpWater": 0,
+      "batchSpargeWaterAmount1": null,
+      "batchSpargeWaterAmount2": null,
+      "batchSpargeWaterAmount3": null,
+      "batchSpargeWaterAmount4": null,
+      "hltWaterAmount": 0,
+      "totalWaterAmount": 37.8,
+      "hopsAmount": 25,
+      "strikeTemp": null,
+      "mashVolume": 41.552
+    },
+    "_init": true,
+    "sumDryHopPerLiter": 0,
+    "fermentables": [
+      {
+        "_timestamp_ms": 1734786113751,
+        "manufacturingDate": null,
+        "amount": 5.5,
+        "potential": 1.03749,
+        "inventoryUnit": null,
+        "inventory": 9.5,
+        "fan": null,
+        "notInRecipe": false,
+        "supplier": "Viking Malt",
+        "cgdb": null,
+        "substitutes": "",
+        "addAfterBoil": "FALSE",
+        "laboratory": null,
+        "fgdb": null,
+        "origin": "Finland, Denmark, Sweden, Poland",
+        "unit": null,
+        "displayAmount": 3.5,
+        "acid": null,
+        "type": "Grain",
+        "usedIn": "",
+        "name": "Viking Pilsner Malt",
+        "coarseFineDiff": null,
+        "bestBeforeDate": null,
+        "_version": "2.11.5",
+        "protein": null,
+        "friability": null,
+        "moisture": null,
+        "userNotes": "",
+        "costPerAmount": 11.56,
+        "hidden": false,
+        "_created": {
+          "seconds": 1576318729,
+          "nanoseconds": 632000000
+        },
+        "notes": "",
+        "_timestamp": {
+          "seconds": 1734786113,
+          "nanoseconds": 751000000
+        },
+        "color": 2,
+        "potentialPercentage": 81.5,
+        "diastaticPower": null,
+        "alpha": null,
+        "maxInBatch": null,
+        "_id": "new-9ndwR01XFBzf5iyEor3ymb0zQMTu44",
+        "percentage": 95.4,
+        "grainCategory": "Base (Pilsner)",
+        "notFermentable": false
+      },
+      {
+        "supplier": "Dan Sukker",
+        "cgdb": null,
+        "moisture": null,
+        "use": "Bottling",
+        "amount": 0.165,
+        "_created": {
+          "seconds": 1547962284,
+          "nanoseconds": 130000000
+        },
+        "manufacturingDate": null,
+        "acid": null,
+        "name": "Minibit-/Mockabitsocker",
+        "attenuation": 1.22,
+        "substitutes": "",
+        "_timestamp_ms": 1725281206312,
+        "percentage": 2.86,
+        "ibuPerAmount": null,
+        "hidden": false,
+        "protein": null,
+        "fan": null,
+        "notFermentable": false,
+        "origin": "",
+        "_id": "default-132c22b",
+        "friability": null,
+        "bestBeforeDate": null,
+        "maxInBatch": null,
+        "inventory": 0.95,
+        "diastaticPower": null,
+        "_timestamp": {
+          "seconds": 1725281206,
+          "nanoseconds": 312000000
+        },
+        "costPerAmount": 31,
+        "potentialPercentage": 100,
+        "potential": 1.046,
+        "fgdb": null,
+        "color": 1,
+        "notes": "",
+        "type": "Sugar",
+        "userNotes": "",
+        "_version": "2.11.1",
+        "usedIn": "",
+        "grainCategory": null,
+        "coarseFineDiff": null
+      },
+      {
+        "manufacturingDate": null,
+        "friability": null,
+        "inventory": 0.9,
+        "diastaticPower": 0,
+        "potentialPercentage": 73.58,
+        "ibuPerAmount": 0,
+        "supplier": "Weyermann",
+        "_created": {
+          "seconds": 1749116154,
+          "nanoseconds": 126000000
+        },
+        "userNotes": "",
+        "usedIn": "",
+        "substitutes": "",
+        "_version": "2.11.6",
+        "fgdb": null,
+        "moisture": 3.6,
+        "coarseFineDiff": 0,
+        "amount": 0.1,
+        "bestBeforeDate": null,
+        "fan": null,
+        "_timestamp": {
+          "seconds": 1749116154,
+          "nanoseconds": 126000000
+        },
+        "_timestamp_ms": 1749116154126,
+        "hidden": false,
+        "color": 178,
+        "percentage": 1.73,
+        "origin": "Germany",
+        "maxInBatch": 15,
+        "type": "Grain",
+        "grainCategory": "Crystal/Caramel",
+        "notes": "Very dark caramel malt with aromatic properties. Adds deep red color and aroma. Amber ales, dark lagers, bocks. Substitute for \"Belgian Special B\" or 120L caramel malts.",
+        "name": "Caraaroma",
+        "protein": 0,
+        "_id": "default-de1e508",
+        "acid": 0,
+        "cgdb": null,
+        "notFermentable": false,
+        "potential": 1.034,
+        "costPerAmount": null
+      }
+    ],
+    "extraGravity": 0.00244526,
+    "ogPlato": 11.1,
+    "ibuFormula": "tinseth",
+    "rbRatio": 0.59,
+    "fermentation": {
+      "name": "Ale",
+      "steps": [
+        {
+          "type": "Primary",
+          "displayPressure": null,
+          "stepTemp": 20,
+          "ramp": null,
+          "displayStepTemp": 20,
+          "pressure": null,
+          "actualTime": 1754776800000,
+          "stepTime": 14
+        }
+      ],
+      "_id": "default"
+    },
+    "_type": "recipe",
+    "boilTime": 90,
+    "tags": null,
+    "totalGravity": 1.044452345,
+    "styleIbu": true,
+    "type": "All Grain",
+    "sumAromaHopPerLiter": 0,
+    "avgWeightedHopstandTemp": 80,
+    "styleRbr": true,
+    "water": {
+      "enableAcidAdjustments": true,
+      "mashWaterAmount": null,
+      "settings": {
+        "magnesiumSulfate": {
+          "auto": true,
+          "sparge": true,
+          "mash": true
+        },
+        "sodiumChloride": {
+          "sparge": true,
+          "auto": true,
+          "mash": true
+        },
+        "calciumCarbonate": {
+          "sparge": true,
+          "mash": true,
+          "auto": false
+        },
+        "calciumSulfate": {
+          "auto": true,
+          "mash": true,
+          "sparge": true
+        },
+        "adjustSparge": true,
+        "calciumChloride": {
+          "sparge": true,
+          "form": "dihydrate",
+          "auto": true,
+          "mash": true
+        },
+        "calciumHydroxide": {
+          "sparge": false,
+          "auto": false,
+          "mash": false
+        },
+        "sodiumBicarbonate": {
+          "auto": true,
+          "mash": true,
+          "sparge": true
+        }
+      },
+      "spargeAcidPhAdjustment": 0,
+      "sourceTargetDiff": null,
+      "mashPh": 5.43,
+      "mash": {
+        "hidden": false,
+        "bicarbonate": 61,
+        "magnesium": 1.6,
+        "chloride": 77.796,
+        "_version": "2.11.5",
+        "bicarbonateMeqL": 0.999737773698702,
+        "name": "Trollhättan 2022-12-02",
+        "ionBalance": 0,
+        "type": "source",
+        "sulfate": 8.1,
+        "hardness": 139,
+        "soClRatio": 0.1,
+        "_created": {
+          "seconds": 1669969256,
+          "nanoseconds": 162000000
+        },
+        "residualAlkalinity": 11.14723,
+        "anions": 3.363,
+        "sodium": 14,
+        "ph": 8,
+        "_timestamp_ms": 1728628811818,
+        "alkalinity": 49.9872,
+        "ionBalanceOff": false,
+        "residualAlkalinityMeqLCalc": 0.03061,
+        "calcium": 53.058,
+        "_id": "2TDPeSdtPbtrPNnzhDowv7kPKJDpXf",
+        "_timestamp": {
+          "seconds": 1728628811,
+          "nanoseconds": 818000000
+        },
+        "cations": 3.388
+      },
+      "style": "default",
+      "mashTargetDiff": null,
+      "totalTargetDiff": null,
+      "dilutionPercentage": null,
+      "total": {
+        "type": "source",
+        "ionBalance": 0,
+        "residualAlkalinityMeqLCalc": 0.03061,
+        "hidden": false,
+        "_timestamp": {
+          "seconds": 1728628811,
+          "nanoseconds": 818000000
+        },
+        "alkalinity": 49.9872,
+        "bicarbonate": 61,
+        "name": "Trollhättan 2022-12-02",
+        "residualAlkalinity": 11.14723,
+        "hardness": 139,
+        "_timestamp_ms": 1728628811818,
+        "sulfate": 8.1,
+        "_version": "2.11.5",
+        "_created": {
+          "seconds": 1669969256,
+          "nanoseconds": 162000000
+        },
+        "soClRatio": 0.1,
+        "cations": 3.388,
+        "ph": 8,
+        "bicarbonateMeqL": 0.999737773698702,
+        "calcium": 53.058,
+        "ionBalanceOff": false,
+        "sodium": 14,
+        "_id": "2TDPeSdtPbtrPNnzhDowv7kPKJDpXf",
+        "magnesium": 1.6,
+        "anions": 3.363,
+        "chloride": 77.796
+      },
+      "sparge": {
+        "residualAlkalinity": 36.90346,
+        "magnesium": 1.6,
+        "name": "Trollhättan 2022-12-02",
+        "type": "source",
+        "ph": 8,
+        "residualAlkalinityMeqLCalc": 0.67325,
+        "_timestamp_ms": 1728628811818,
+        "hidden": false,
+        "anions": 1.563,
+        "_timestamp": {
+          "seconds": 1728628811,
+          "nanoseconds": 818000000
+        },
+        "ionBalanceOff": false,
+        "bicarbonate": 61,
+        "_created": {
+          "seconds": 1669969256,
+          "nanoseconds": 162000000
+        },
+        "bicarbonateMeqL": 0.999737773698702,
+        "_version": "2.11.5",
+        "calcium": 17,
+        "alkalinity": 49.9872,
+        "ionBalance": 0,
+        "sodium": 14,
+        "_id": "2TDPeSdtPbtrPNnzhDowv7kPKJDpXf",
+        "sulfate": 8.1,
+        "chloride": 14,
+        "soClRatio": 0.58,
+        "hardness": 49,
+        "cations": 1.589
+      },
+      "spargeWaterAmount": null,
+      "dilutionAmount": 0,
+      "mashAdjustments": {
+        "calciumHydroxide": 0,
+        "sodiumMetabisulfite": 0,
+        "magnesiumSulfate": 0,
+        "calcium": 36.058,
+        "sodium": 0,
+        "calciumSulfate": 0,
+        "ltAMS": 0,
+        "acids": [
+          {
+            "type": "lactic",
+            "alkalinityMeqL": -1.8165021339624516,
+            "amount": 5,
+            "concentration": 80
+          }
+        ],
+        "sodiumChloride": 0,
+        "ltDWB": 0,
+        "bicarbonate": 0,
+        "magnesium": 0,
+        "magnesiumChloride": 0,
+        "calciumChloride": 5,
+        "sodiumMetabisulfitePPM": 0,
+        "sulfate": 0,
+        "sodiumBicarbonate": 0,
+        "chloride": 63.796,
+        "volume": 37.8,
+        "calciumCarbonate": 0
+      },
+      "acidPhAdjustment": -0.23887,
+      "source": {
+        "cations": 1.589,
+        "type": "source",
+        "_id": "2TDPeSdtPbtrPNnzhDowv7kPKJDpXf",
+        "bicarbonate": 61,
+        "anions": 1.563,
+        "ionBalance": 0,
+        "residualAlkalinityMeqLCalc": 0.67325,
+        "alkalinity": 49.9872,
+        "calcium": 17,
+        "ph": 8,
+        "sulfate": 8.1,
+        "chloride": 14,
+        "_timestamp_ms": 1728628811818,
+        "name": "Trollhättan 2022-12-02",
+        "hardness": 49,
+        "_created": {
+          "seconds": 1669969256,
+          "nanoseconds": 162000000
+        },
+        "bicarbonateMeqL": 0.999737773698702,
+        "soClRatio": 0.58,
+        "ionBalanceOff": false,
+        "sodium": 14,
+        "_version": "2.11.5",
+        "_timestamp": {
+          "seconds": 1728628811,
+          "nanoseconds": 818000000
+        },
+        "magnesium": 1.6,
+        "residualAlkalinity": 36.90346,
+        "hidden": false
+      },
+      "totalAdjustments": {
+        "calciumChloride": 5,
+        "calciumSulfate": 0,
+        "acids": [
+          {
+            "type": "lactic",
+            "amount": 5,
+            "alkalinityMeqL": -1.8165021339624516,
+            "concentration": 80
+          }
+        ],
+        "calciumHydroxide": 0,
+        "sulfate": 0,
+        "sodiumMetabisulfite": 0,
+        "calciumCarbonate": 0,
+        "sodium": 0,
+        "sodiumChloride": 0,
+        "bicarbonate": 0,
+        "ltDWB": 0,
+        "magnesiumSulfate": 0,
+        "sodiumBicarbonate": 0,
+        "chloride": 63.796,
+        "sodiumMetabisulfitePPM": 0,
+        "ltAMS": 0,
+        "volume": 37.8,
+        "magnesiumChloride": 0,
+        "calcium": 36.058,
+        "magnesium": 0
+      },
+      "mashPhDistilled": 5.67,
+      "meta": {
+        "equalSourceTotal": false
+      },
+      "enableSpargeAdjustments": false,
+      "spargeAdjustments": {
+        "sulfate": 0,
+        "acids": [
+          {
+            "type": "lactic",
+            "concentration": 80,
+            "amount": 0
+          }
+        ],
+        "sodiumMetabisulfitePPM": 0,
+        "magnesium": 0,
+        "sodium": 0,
+        "bicarbonate": 0,
+        "volume": 0,
+        "chloride": 0,
+        "calcium": 0
+      },
+      "spargeTargetDiff": null,
+      "diluted": null
+    }
+  },
+  "brewer": "Andreas Hermansson",
+  "batchHopsLocal": [],
+  "_app_metadata": {
+    "webhook": {
+      "run": false
+    }
+  },
+  "measurements": []
+}
