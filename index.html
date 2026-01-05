@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Home Brewery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+        
+    <div class="upload-area">
+        <h3>📂 Load .beerjson file</h3>
+        <p>or drag and drop it here</p>
+        <input type="file" id="fileInput" accept=".json,.beerjson" style="display:none">
+        <button class="btn-primary" onclick="document.getElementById('fileInput').click()">Select File</button>
+        <p style="margin: 10px 0; color: #999;">— OR —</p>
+        <button class="btn-primary" style="background-color: #27ae60;" onclick="initRecipeBuilder()">✨ Create New Recipe</button>
+    </div>
+    
+    <div id="beerLibrary">
+        <h2 style="border-bottom: 2px solid var(--primary); padding-bottom:10px;">🍺 On Tap / Archive</h2>
+        <div id="beerListContainer" class="beer-list">
+            <p style="color:#777;">Loading library...</p>
+        </div>
+    </div>
+
+
+    <div id="dashboard" style="display:none;">
+        <button class="back-button" onclick="showLibrary()">← Back to Beer Menu</button>
+        <header>
+            <div>
+                <h1 id="recipeName">Batch Name</h1>
+                <div class="batch-meta">
+                    <span id="batchNo"></span> | <span id="brewerName"></span>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div id="brewDate" style="font-weight: bold;"></div>
+                <div id="statusBadge"></div>
+                <div class="header-actions">
+                    <button id="btnStartBatch" class="btn-primary" onclick="toggleBatchMode()">Start Brew Day</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="val-abv">--</div>
+                <div class="stat-label">ABV %</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="val-og">--</div>
+                <div class="stat-label">OG</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="val-fg">--</div>
+                <div class="stat-label">FG</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="val-ibu">--</div>
+                <div class="stat-label">IBU</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value">
+                    <span id="val-color-dot" style="display:inline-block; width:18px; height:18px; border-radius:50%; border:1px solid #ddd; vertical-align:middle; margin-right:5px;"></span>
+                    <span id="val-color">--</span>
+                </div>
+                <div class="stat-label">Color (EBC)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-value" id="val-vol">--</div>
+                <div class="stat-label">Batch Size (L)</div>
+            </div>
+             <div class="stat-card">
+                <div class="stat-value" id="val-eff">--</div>
+                <div class="stat-label">Efficiency</div>
+            </div>
+        </div>
+
+        <div class="section-card" id="mashSection" style="display:none;">
+            <h2>🌡️ Mash Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Step Name</th>
+                        <th>Temperature</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="mashList"></tbody>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h2>🌾 Fermentables</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Color</th>
+                    </tr>
+                </thead>
+                <tbody id="fermentablesList"></tbody>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h2>🌿 Hops</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Variety</th>
+                        <th>Time</th>
+                        <th>Use</th>
+                        <th>IBU</th>
+                    </tr>
+                </thead>
+                <tbody id="hopsList"></tbody>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h2>🧫 Yeast & Misc</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody id="yeastList"></tbody>
+            </table>
+        </div>
+
+        <div class="section-card" id="fermSection" style="display:none;">
+            <h2>🦠 Fermentation Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Step Type</th>
+                        <th>Temperature</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="fermList"></tbody>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h2>📝 Notes</h2>
+            <div id="notesContent"></div>
+        </div>
+
+        <div id="batchForm" class="batch-form">
+                <h2>📝 Brew Day Log</h2>
+                
+                <div class="form-section">
+                    <h3>1. Preparation</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Batch Number</label>
+                            <input type="number" id="inputBatchNo">
+                        </div>
+                        <div class="form-group">
+                            <label>Brew Date</label>
+                            <input type="date" id="inputDate">
+                        </div>
+                        <div class="form-group">
+                            <label>Brewer</label>
+                            <input type="text" id="inputBrewer">
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select id="inputStatus" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                                <option value="Planning">Planning</option>
+                                <option value="Brewing">Brewing</option>
+                                <option value="Fermenting">Fermenting</option>
+                                <option value="Conditioning">Conditioning</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Archived">Archived</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>2. Mash & Boil</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Pre-Boil Volume (L)</label>
+                            <input type="number" step="0.1" id="inputPreBoilVol" oninput="calculateMashEfficiency()">
+                            <span class="helper-text" id="targetPreBoilVol">Target: --</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Pre-Boil Gravity (SG)</label>
+                            <input type="number" step="0.001" id="inputPreBoilG" placeholder="e.g. 1.045" oninput="calculateMashEfficiency()">
+                            <span class="helper-text" id="targetPreBoilG">Target: --</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Calculated Mash Efficiency (%)</label>
+                            <input type="number" step="0.1" id="inputMashEff" style="background-color: #f0f4c3; font-weight: bold;">
+                            <span class="helper-text" id="targetMashEff">Target: --</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Post-Boil Volume (L)</label>
+                            <input type="number" step="0.1" id="inputPostBoilVol">
+                            <span class="helper-text" id="targetPostBoilVol">Target: --</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>3. Into Fermenter</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Original Gravity (OG)</label>
+                            <input type="number" step="0.001" id="inputOG" oninput="calculateStats()">
+                            <span class="helper-text" id="targetOG">Target: --</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Volume into Fermenter (L)</label>
+                            <input type="number" step="0.1" id="inputVol">
+                            <span class="helper-text" id="targetVol">Target: --</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>4. Results (Post-Fermentation)</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Final Gravity (FG)</label>
+                            <input type="number" step="0.001" id="inputFG" oninput="calculateStats()">
+                            <span class="helper-text" id="targetFG">Target: --</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Packaged Volume (L)</label>
+                            <input type="number" step="0.1" id="inputPkgVol">
+                            <span class="helper-text" id="targetPkgVol">Target: --</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Calculated ABV (%)</label>
+                            <input type="text" id="inputABV" readonly style="background-color: #f9f9f9; font-weight:bold;">
+                        </div>
+                        <div class="form-group">
+                            <label>Measured Attenuation (%)</label>
+                            <input type="text" id="inputAtt" readonly style="background-color: #f9f9f9;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>Day Notes</label>
+                        <textarea id="inputNotes" rows="4" placeholder="How did the brew day go?"></textarea>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn-primary" onclick="saveBatchFile()" style="width: 100%; padding: 15px; font-size: 1.2em; background-color: #27ae60;">
+                        💾 Save Batch (.beerjson)
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="recipeBuilder">
+        <div class="builder-header">
+            <h2>🛠️ Recipe Creator</h2>
+            <div>
+                <button class="btn-primary" onclick="saveBuiltRecipe()">💾 Save Recipe</button>
+                <button class="btn-remove" onclick="cancelBuilder()">Cancel</button>
+            </div>
+        </div>
+
+        <div class="builder-stats-bar">
+            <div class="builder-stat-box"><small>OG</small><strong id="liveOG">1.000</strong></div>
+            <div class="builder-stat-box"><small>FG</small><strong id="liveFG">1.000</strong></div>
+            <div class="builder-stat-box"><small>ABV</small><strong id="liveABV">0.0%</strong></div>
+            <div class="builder-stat-box"><small>IBU</small><strong id="liveIBU">0</strong></div>
+            <div class="builder-stat-box">
+                <small>Color</small>
+                <div>
+                    <span id="liveColorPreview" class="color-preview"></span>
+                    <strong id="liveColor">0</strong> EBC
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>1. General Settings</h3>
+            <div class="form-grid">
+                <div class="form-group"><label>Recipe Name</label><input type="text" id="buildName" value="New Recipe"></div>
+                <div class="form-group"><label>Author</label><input type="text" id="buildAuthor" value="Me"></div>
+                <div class="form-group"><label>Batch Volume (L)</label><input type="number" id="buildBatchSize" value="20" oninput="recalc()"></div>
+                <div class="form-group"><label>Boil Time (min)</label><input type="number" id="buildBoilTime" value="60" oninput="recalc()"></div>
+                <div class="form-group"><label>Efficiency (%)</label><input type="number" id="buildEff" value="75" oninput="recalc()"></div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>2. Fermentables (Grains & Extracts)</h3>
+            <table class="ingredient-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Amount (kg)</th>
+                        <th width="35%">Name</th>
+                        <th width="15%">Color (EBC)</th>
+                        <th width="20%">Potential (SG)</th>
+                        <th width="10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="buildGrainList"></tbody>
+            </table>
+            <button class="btn-add" onclick="addGrainRow()">+ Add Fermentable</button>
+        </div>
+
+        <div class="form-section">
+            <h3>3. Hops</h3>
+            <table class="ingredient-table">
+                <thead>
+                    <tr>
+                        <th width="20%">Amount (g)</th>
+                        <th width="30%">Variety</th>
+                        <th width="15%">Alpha (%)</th>
+                        <th width="15%">Time (min)</th>
+                        <th width="10%">Use</th>
+                        <th width="10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="buildHopList"></tbody>
+            </table>
+            <button class="btn-add" onclick="addHopRow()">+ Add Hop</button>
+        </div>
+
+        <div class="form-section">
+            <h3>4. Yeast</h3>
+            <table class="ingredient-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th width="20%">Avg Attenuation (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="buildYeastName" value="US-05"></td>
+                        <td><input type="number" id="buildYeastAtt" value="81" oninput="recalc()"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <h3>5. Misc (Water Agents, Nutrients, etc)</h3>
+            <table class="ingredient-table">
+                <thead>
+                    <tr>
+                        <th width="15%">Amount</th>
+                        <th width="10%">Unit</th>
+                        <th width="30%">Name</th>
+                        <th width="20%">Type</th>
+                        <th width="15%">Use</th>
+                        <th width="10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="buildMiscList"></tbody>
+            </table>
+            <button class="btn-add" onclick="addMiscRow()">+ Add Misc</button>
+        </div>
+
+        <div class="form-section">
+            <h3>6. Mash Schedule</h3>
+            <table class="ingredient-table">
+                <thead>
+                    <tr>
+                        <th width="40%">Step Name</th>
+                        <th width="25%">Temp (°C)</th>
+                        <th width="25%">Time (min)</th>
+                        <th width="10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="buildMashList"></tbody>
+            </table>
+            <button class="btn-add" onclick="addMashStepRow()">+ Add Step</button>
+        </div>
+
+        <div class="form-section">
+            <h3>7. Fermentation Schedule</h3>
+            <table class="ingredient-table">
+                <thead>
+                    <tr>
+                        <th width="40%">Step Type</th>
+                        <th width="25%">Temp (°C)</th>
+                        <th width="25%">Time (days)</th>
+                        <th width="10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="buildFermStepList"></tbody>
+            </table>
+            <button class="btn-add" onclick="addFermStepRow()">+ Add Step</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
