@@ -389,3 +389,86 @@ th {
     font-size: 0.9em;
     margin-bottom: 10px;
 }
+
+/* =========================================
+   MOBILE / RESPONSIVE STYLES
+   Add this to the very bottom of style.css
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Adjust Main Container */
+    body {
+        padding: 10px; /* Less padding on edges */
+    }
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* 2. Stack the Header */
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    header > div {
+        text-align: center !important;
+        width: 100%;
+    }
+    .header-actions {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .header-actions button {
+        width: 100%; /* Big clickable buttons */
+        padding: 15px;
+    }
+
+    /* 3. Stack the Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr 1fr; /* Force 2 columns on mobile */
+        gap: 10px;
+    }
+
+    /* 4. Form Inputs become full width */
+    .form-grid {
+        grid-template-columns: 1fr; /* Stack inputs vertically */
+    }
+    
+    /* 5. Make tables scrollable if they get too wide */
+    .section-card, .form-section {
+        overflow-x: auto; 
+    }
+    table {
+        min-width: 500px; /* Force table to keep its shape so you can scroll */
+    }
+
+    /* 6. Recipe Builder adjustments */
+    .builder-stats-bar {
+        position: relative; /* Unstick it so it doesn't cover content */
+        top: 0;
+        grid-template-columns: repeat(3, 1fr); /* 3 stats per row */
+        font-size: 0.9em;
+    }
+    
+    /* Hide the "Cancel" button text to save space, just show icon/color? 
+       Or make buttons stack */
+    .builder-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .builder-header div {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+    .builder-header button {
+        flex: 1; /* Buttons share equal width */
+    }
+
+    /* 7. Beer Library Grid */
+    .beer-list {
+        grid-template-columns: 1fr; /* One beer card per row */
+    }
+}
