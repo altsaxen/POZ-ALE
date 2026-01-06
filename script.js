@@ -1051,9 +1051,9 @@ function renderTables(design) {
     }
 
     // --- Fermentation Steps ---
-    const fermList = document.getElementById('fermList');
+    const fermStepList = document.getElementById('fermStepList');
     const fermSection = document.getElementById('fermSection');
-    fermList.innerHTML = '';
+    fermStepList.innerHTML = '';
     
     // Check if fermentation object and steps exist
     if (design.fermentation && design.fermentation.steps && design.fermentation.steps.length > 0) {
@@ -1069,7 +1069,7 @@ function renderTables(design) {
                 <td><span class="temp-badge">${temp} °C</span></td>
                 <td>${time} days</td>
             </tr>`;
-            fermList.innerHTML += row;
+            fermStepList.innerHTML += row;
         });
     } else {
         fermSection.style.display = 'none';
