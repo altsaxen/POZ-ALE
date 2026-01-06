@@ -1,30 +1,30 @@
 [
   {
-    "name": "X82 Brun",
-    "style": "Scottish Export",
-    "abv": "6.3%",
-    "date": "2025-06-05",
-    "filename": "batches/Brun_82.json"
+    "name": "Maibock",
+    "style": "German-Style Heller Bock/Maibock",
+    "abv": "7.7%",
+    "date": "2025-12-06",
+    "filename": "batches/Maibock_85.json"
   },
   {
-    "name": "X83 APA",
-    "style": "APA",
-    "abv": "5.0%",
-    "date": "2025-08-09",
-    "filename": "batches/APA_83.json"
-},
-  {
-    "name": "X84 Smedby Humle",
-    "style": "Summer Ale",
+    "name": "Humle 2025",
+    "style": "English-Style Summer Ale",
     "abv": "4.1%",
-    "date": "2026-01-05",
+    "date": "2025-11-29",
     "filename": "batches/Humle2025_84.json"
   },
   {
-    "name": "X85 Maibock",
-    "style": "German Helles",
-    "abv": "7.2%",
-    "date": "2026-12-14",
-    "filename": "batches/Maibock_85.json"
+    "name": "APA",
+    "style": "English-Style Summer Ale",
+    "abv": "5.5%",
+    "date": "2025-08-09",
+    "filename": "batches/APA_83.json"
+  },
+  {
+    "name": "Brun",
+    "style": "Scottish-Style Export Ale",
+    "abv": "6.3%",
+    "date": "2025-06-05",
+    "filename": "batches/Brun_82.json"
   }
 ]
