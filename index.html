@@ -305,6 +305,13 @@
             <div class="form-grid">
                 <div class="form-group"><label>Recipe Name</label><input type="text" id="buildName" value="New Recipe"></div>
                 <div class="form-group"><label>Author</label><input type="text" id="buildAuthor" value="Me"></div>
+                
+                <div class="form-group">
+                    <label>Beer Style (BA)</label>
+                    <select id="buildStyle">
+                        </select>
+                </div>
+                
                 <div class="form-group"><label>Batch Volume (L)</label><input type="number" id="buildBatchSize" value="20" oninput="recalc()"></div>
                 <div class="form-group"><label>Boil Time (min)</label><input type="number" id="buildBoilTime" value="60" oninput="recalc()"></div>
                 <div class="form-group"><label>Efficiency (%)</label><input type="number" id="buildEff" value="75" oninput="recalc()"></div>
