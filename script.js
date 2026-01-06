@@ -115,7 +115,8 @@ function renderBeer(data) {
         document.getElementById('batchNo').textContent = `Batch #${data.batchNo}`;
         document.getElementById('statusBadge').textContent = data.status || "Planned";
         document.getElementById('statusBadge').className = 'status-pill status-batch';
-        document.getElementById('brewDate').textContent = data.brewDate ? new Date(data.brewDate).toLocaleDateString() : '';
+        // Force Swedish locale ('sv-SE')
+        document.getElementById('brewDate').textContent = data.brewDate ? new Date(data.brewDate).toLocaleDateString('sv-SE') : '';
         document.getElementById('btnStartBatch').textContent = "Edit Batch Data";
     } else {
         document.getElementById('batchNo').textContent = "Recipe Library";
