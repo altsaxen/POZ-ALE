@@ -1299,13 +1299,13 @@ function initRecipeBuilder() {
     });
     
     // ... rest of init function ...
-    document.getElementById('buildFermList').innerHTML = '';
+    document.getElementById('buildGrainList').innerHTML = '';
     document.getElementById('buildHopList').innerHTML = '';
     document.getElementById('buildMiscList').innerHTML = '';
     document.getElementById('buildMashList').innerHTML = '';
-    document.getElementById('buildFermList').innerHTML = ''; // Ensure IDs are unique in HTML as discussed before
+    document.getElementById('buildFermStepList').innerHTML = ''; // Ensure IDs are unique in HTML as discussed before
     
-    addFermRow(5, "Pale Ale Malt", 5, 1.038); 
+    addGrainRow(5, "Pale Ale Malt", 5, 1.038); 
     addHopRow(20, "Magnum", 12, 60, "Boil");
     recalc();
 }
@@ -1513,6 +1513,10 @@ function srmToRgb(srm) {
 }
 
 function saveBuiltRecipe() {
+
+    const styleSelect = document.getElementById('buildStyle');
+    const selectedOption = styleSelect.options[styleSelect.selectedIndex];
+
     // 1. Construct the base object
     const recipe = {
         _type: "recipe",
