@@ -5,22 +5,23 @@ const uploadArea = document.querySelector('.upload-area');
 
 let currentBeerData = null; 
 
-let baStyleDoc = null; // Global variable to hold the HTML document
-
 // 1. INITIALIZATION: Load Library & Check URL
+let baStyleDoc = null; 
+
 window.addEventListener('DOMContentLoaded', () => {
+    // 1. Load the Library
     fetchLibrary();
     
-    // NEW: Fetch Raw HTML Styles
-    fetch('ba_styles.html')
-        .then(res => res.text())
-        .then(html => {
-            // Parse the text into a searchable DOM object
-            const parser = new DOMParser();
-            baStyleDoc = parser.parseFromString(html, 'text/html');
-        })
-        .catch(err => console.log("Could not load style HTML."));
+    // 2. Parse the Styles (Now reading from the variable in style_library.js)
+    if (typeof BA_STYLES_HTML !== 'undefined') {
+        const parser = new DOMParser();
+        baStyleDoc = parser.parseFromString(BA_STYLES_HTML, 'text/html');
+        console.log("Styles loaded from variable.");
+    } else {
+        console.error("BA_STYLES_HTML is missing. Check style_library.js");
+    }
 
+    // 3. Check URL for shared batch
     const urlParams = new URLSearchParams(window.location.search);
     const batchFile = urlParams.get('batch');
     if (batchFile) {
@@ -901,52 +902,64 @@ function toggleStyleInfo(styleName) {
     }
 
     if (!baStyleDoc) {
-        alert("Style guidelines not loaded yet.");
+        alert("Style guidelines not loaded.");
         return;
     }
 
-    // 1. Find the Header in the HTML
-    // We look for any H1, H2, H3, H4 that contains the style name exactly
-    const headers = Array.from(baStyleDoc.querySelectorAll('h1, h2, h3, h4, h5'));
-    const targetHeader = headers.find(h => h.textContent.trim() === styleName);
+    // 1. FIND THE STYLE
+    // In your HTML, the style name is the FIRST <li> inside a <ul> with class "list-with-heading"
+    // We grab all first-child list items and find the one that matches our name.
+    const allTitles = Array.from(baStyleDoc.querySelectorAll('ul.list-with-heading > li:first-child'));
+    const targetLi = allTitles.find(li => li.textContent.trim() === styleName);
 
-    if (!targetHeader) {
+    if (!targetLi) {
         alert("Style details not found for: " + styleName);
         return;
     }
 
-    // 2. Read the content following the header
-    // We grab everything until the next header
-    let contentHtml = "";
-    let currentNode = targetHeader.nextElementSibling;
-    
-    while (currentNode && !['H1','H2','H3','H4','H5'].includes(currentNode.tagName)) {
-        contentHtml += currentNode.outerHTML; // Keep HTML tags (bolding, lists, etc)
-        currentNode = currentNode.nextElementSibling;
+    // 2. GET THE DATA CONTAINERS
+    const descUl = targetLi.parentElement; // The <ul> containing descriptions
+    // The stats are usually in the NEXT <ul> sibling with class 'horizontal'
+    // We look for the next element sibling that matches that criteria
+    let statsUl = descUl.nextElementSibling;
+    while (statsUl && statsUl.tagName !== 'UL') {
+        statsUl = statsUl.nextElementSibling;
     }
 
-    // 3. Extract Data using a temporary div
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = contentHtml;
-    const fullText = tempDiv.innerText; // Get clean text for stats parsing
+    // 3. PARSE DESCRIPTIONS
+    // We loop through all <li>s in the first list (skipping the first one, which is the title)
+    const descMap = {};
+    Array.from(descUl.children).slice(1).forEach(li => {
+        const strong = li.querySelector('strong');
+        if (strong) {
+            // Label is inside <strong> (e.g. "Color:"), Value is the text following it
+            let label = strong.textContent.replace(':', '').trim();
+            // Get text content of the LI, but remove the label text
+            let value = li.textContent.substring(strong.textContent.length).trim();
+            descMap[label] = value;
+        }
+    });
 
-    // Helper to find text after a label like "Color:"
-    const extract = (label) => {
-        // Look for the label in the HTML or Text. 
-        // We use a regex that stops at the next likely label or newline
-        const regex = new RegExp(`${label}[:\\s]+(.*?)(?=<br>|\\n|Perceived|Fermentation|Body|Original|$)`, 'i');
-        const match = fullText.match(regex);
-        return match ? match[1].trim() : null;
-    };
+    // 4. PARSE STATS
+    const statsMap = {};
+    if (statsUl) {
+        Array.from(statsUl.children).forEach(li => {
+            const strong = li.querySelector('strong');
+            if (strong) {
+                let label = strong.textContent.trim();
+                let value = li.textContent.substring(strong.textContent.length).trim();
+                
+                // Map complex labels to simple keys
+                if (label.includes("Original Gravity")) statsMap.og = value;
+                else if (label.includes("Final Gravity")) statsMap.fg = value;
+                else if (label.includes("Alcohol")) statsMap.abv = value;
+                else if (label.includes("Bitterness")) statsMap.ibu = value;
+                else if (label.includes("Color")) statsMap.srm = value;
+            }
+        });
+    }
 
-    // Helper to extract stats (OG, FG, etc) which are usually at the bottom
-    const getStat = (regexStr) => {
-        const regex = new RegExp(regexStr, 'i');
-        const match = fullText.match(regex);
-        return match ? match[1].trim() : '-';
-    };
-
-    // 4. Populate the Card
+    // 5. POPULATE THE UI
     document.getElementById('sdName').textContent = styleName;
     const grid = document.getElementById('sdGrid');
     grid.innerHTML = '';
@@ -955,35 +968,24 @@ function toggleStyleInfo(styleName) {
         if(text) grid.innerHTML += `<div class="style-row"><h4>${label}</h4><p>${text}</p></div>`;
     };
 
-    addRow("Malt", extract("Perceived Malt Aroma & Flavor"));
-    addRow("Hops", extract("Perceived Hop Aroma & Flavor"));
-    addRow("Bitterness", extract("Perceived Bitterness"));
-    
-    const colorVal = extract("Color");
-    const clarityVal = extract("Clarity");
-    if(colorVal || clarityVal) {
-        addRow("Appearance", `Color: ${colorVal || '-'}<br>Clarity: ${clarityVal || '-'}`);
+    // Use the specific keys from your HTML structure
+    if(descMap['Color'] || descMap['Clarity']) {
+        addRow("Appearance", `Color: ${descMap['Color'] || '-'}<br>Clarity: ${descMap['Clarity'] || '-'}`);
     }
-    
-    addRow("Fermentation", extract("Fermentation Characteristics"));
-    addRow("Body", extract("Body"));
+    addRow("Malt", descMap['Perceived Malt Aroma & Flavor']);
+    addRow("Hops", descMap['Perceived Hop Aroma & Flavor']);
+    addRow("Bitterness", descMap['Perceived Bitterness']);
+    addRow("Fermentation", descMap['Fermentation Characteristics']);
+    addRow("Body", descMap['Body']);
 
-    // 5. Populate Stats
+    // 6. POPULATE STATS BAR
     const statsBar = document.getElementById('sdStats');
-    
-    // Regex logic to find the numbers
-    const og = getStat(/Original Gravity.*?\)\s*([0-9\.\-]+.*?)(\s+Apparent|$)/);
-    const fg = getStat(/Apparent Extract\/Final Gravity.*?\)\s*([0-9\.\-]+.*?)(\s+Alcohol|$)/);
-    const abv = getStat(/Alcohol by Weight \(Volume\)\s*([0-9\.\-%]+.*?)(\s+Bitterness|$)/);
-    const ibu = getStat(/Bitterness \(IBU\)\s*([0-9\-]+)(\s+Color|$)/);
-    const srm = getStat(/Color SRM \(EBC\)\s*(.*?)$/);
-
     statsBar.innerHTML = `
-        <div class="stat-box"><small>OG</small><span>${og}</span></div>
-        <div class="stat-box"><small>FG</small><span>${fg}</span></div>
-        <div class="stat-box"><small>ABV</small><span>${abv}</span></div>
-        <div class="stat-box"><small>IBU</small><span>${ibu}</span></div>
-        <div class="stat-box"><small>Color</small><span>${srm}</span></div>
+        <div class="stat-box"><small>OG</small><span>${statsMap.og || '-'}</span></div>
+        <div class="stat-box"><small>FG</small><span>${statsMap.fg || '-'}</span></div>
+        <div class="stat-box"><small>ABV</small><span>${statsMap.abv || '-'}</span></div>
+        <div class="stat-box"><small>IBU</small><span>${statsMap.ibu || '-'}</span></div>
+        <div class="stat-box"><small>Color</small><span>${statsMap.srm || '-'}</span></div>
     `;
 
     card.style.display = 'block';
