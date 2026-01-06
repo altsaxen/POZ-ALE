@@ -5,6 +5,741 @@ const uploadArea = document.querySelector('.upload-area');
 
 let currentBeerData = null; 
 
+const beerStyleData = [
+  {
+    "category": "British Origin Ale Styles",
+    "styles": [
+      {
+        "name": "Ordinary Bitter",
+        "id": "941"
+      },
+      {
+        "name": "Special Bitter or Best Bitter",
+        "id": "972"
+      },
+      {
+        "name": "Extra Special Bitter",
+        "id": "892"
+      },
+      {
+        "name": "English-Style Summer Ale",
+        "id": "886"
+      },
+      {
+        "name": "Classic English-Style Pale Ale",
+        "id": "805"
+      },
+      {
+        "name": "British-Style India Pale Ale",
+        "id": "863"
+      },
+      {
+        "name": "Strong Ale",
+        "id": "976"
+      },
+      {
+        "name": "Old Ale",
+        "id": "940"
+      },
+      {
+        "name": "English-Style Pale Mild Ale",
+        "id": "885"
+      },
+      {
+        "name": "English-Style Dark Mild Ale",
+        "id": "884"
+      },
+      {
+        "name": "English-Style Brown Ale",
+        "id": "883"
+      },
+      {
+        "name": "Brown Porter",
+        "id": "864"
+      },
+      {
+        "name": "Robust Porter",
+        "id": "957"
+      },
+      {
+        "name": "Sweet Stout or Cream Stout",
+        "id": "978"
+      },
+      {
+        "name": "Oatmeal Stout",
+        "id": "939"
+      },
+      {
+        "name": "British-Style Imperial Stout",
+        "id": "862"
+      },
+      {
+        "name": "British-Style Barley Wine Ale",
+        "id": "861"
+      }
+    ]
+  },
+  {
+    "category": "Irish Origin Ale Styles",
+    "styles": [
+      {
+        "name": "Irish-Style Red Ale",
+        "id": "921"
+      },
+      {
+        "name": "Classic Irish-Style Dry Stout",
+        "id": "870"
+      },
+      {
+        "name": "Export-Style Stout",
+        "id": "891"
+      }
+    ]
+  },
+  {
+    "category": "North American Origin Ale Styles",
+    "styles": [
+      {
+        "name": "Golden or Blonde Ale",
+        "id": "914"
+      },
+      {
+        "name": "Session India Pale Ale",
+        "id": "964"
+      },
+      {
+        "name": "American-Style Amber/Red Ale",
+        "id": "812"
+      },
+      {
+        "name": "American-Style Pale Ale",
+        "id": "830"
+      },
+      {
+        "name": "Juicy or Hazy Pale Ale",
+        "id": "925"
+      },
+      {
+        "name": "American-Style Strong Pale Ale",
+        "id": "834"
+      },
+      {
+        "name": "Juicy or Hazy Strong Pale Ale",
+        "id": "926"
+      },
+      {
+        "name": "American-Style India Pale Ale",
+        "id": "824"
+      },
+      {
+        "name": "Juicy or Hazy India Pale Ale",
+        "id": "924"
+      },
+      {
+        "name": "American-Belgo-Style Ale",
+        "id": "810"
+      },
+      {
+        "name": "American-Style Brown Ale",
+        "id": "815"
+      },
+      {
+        "name": "American-Style Black Ale",
+        "id": "814"
+      },
+      {
+        "name": "American-Style Stout",
+        "id": "833"
+      },
+      {
+        "name": "American-Style Imperial Porter",
+        "id": "822"
+      },
+      {
+        "name": "American-Style Imperial Stout",
+        "id": "823"
+      },
+      {
+        "name": "Double Hoppy Red Ale",
+        "id": "881"
+      },
+      {
+        "name": "Imperial Red Ale",
+        "id": "918"
+      },
+      {
+        "name": "American-Style Imperial or Double India Pale Ale",
+        "id": "821"
+      },
+      {
+        "name": "Juicy or Hazy Imperial or Double India Pale Ale",
+        "id": "923"
+      },
+      {
+        "name": "American-Style Barley Wine Ale",
+        "id": "813"
+      },
+      {
+        "name": "American-Style Wheat Wine Ale",
+        "id": "835"
+      },
+      {
+        "name": "Smoke Porter",
+        "id": "966"
+      },
+      {
+        "name": "American-Style Sour Ale",
+        "id": "832"
+      },
+      {
+        "name": "American-Style Fruited Sour Ale",
+        "id": "820"
+      },
+      {
+        "name": "Kentucky Common Beer",
+        "id": "929"
+      },
+      {
+        "name": "American-Style Fruit Beer",
+        "id": "819"
+      },
+      {
+        "name": "West Coast-Style India Pale Ale",
+        "id": "982"
+      }
+    ]
+  },
+  {
+    "category": "German Origin Ale Styles",
+    "styles": [
+      {
+        "name": "German-Style Koelsch",
+        "id": "904"
+      },
+      {
+        "name": "German-Style Altbier",
+        "id": "900"
+      },
+      {
+        "name": "Berliner-Style Weisse",
+        "id": "857"
+      },
+      {
+        "name": "Leipzig-Style Gose",
+        "id": "930"
+      },
+      {
+        "name": "Contemporary-Style Gose",
+        "id": "877"
+      },
+      {
+        "name": "South German-Style Hefeweizen",
+        "id": "969"
+      },
+      {
+        "name": "South German-Style Kristal Weizen",
+        "id": "970"
+      },
+      {
+        "name": "German-Style Leichtes Weizen",
+        "id": "906"
+      },
+      {
+        "name": "South German-Style Bernsteinfarbenes Weizen",
+        "id": "967"
+      },
+      {
+        "name": "South German-Style Dunkel Weizen",
+        "id": "968"
+      },
+      {
+        "name": "South German-Style Weizenbock",
+        "id": "971"
+      },
+      {
+        "name": "German-Style Rye Ale",
+        "id": "910"
+      },
+      {
+        "name": "Bamberg-Style Weiss Rauchbier",
+        "id": "842"
+      }
+    ]
+  },
+  {
+    "category": "Belgian and French Origin Ale Styles",
+    "styles": [
+      {
+        "name": "Belgian-Style Table Beer",
+        "id": "854"
+      },
+      {
+        "name": "Belgian-Style Session Ale",
+        "id": "850"
+      },
+      {
+        "name": "Belgian-Style Speciale Belge",
+        "id": "851"
+      },
+      {
+        "name": "Belgian-Style Blonde Ale",
+        "id": "843"
+      },
+      {
+        "name": "Belgian-Style Strong Blonde Ale",
+        "id": "852"
+      },
+      {
+        "name": "Belgian-Style Strong Dark Ale",
+        "id": "853"
+      },
+      {
+        "name": "Belgian-Style Dubbel",
+        "id": "844"
+      },
+      {
+        "name": "Belgian-Style Tripel",
+        "id": "855"
+      },
+      {
+        "name": "Belgian-Style Quadrupel",
+        "id": "849"
+      },
+      {
+        "name": "Belgian-Style Witbier",
+        "id": "856"
+      },
+      {
+        "name": "Classic French & Belgian-Style Saison",
+        "id": "869"
+      },
+      {
+        "name": "Specialty Saison",
+        "id": "975"
+      },
+      {
+        "name": "French-Style Bière de Garde",
+        "id": "895"
+      },
+      {
+        "name": "Belgian-Style Flanders Oud Bruin or Oud Red Ale",
+        "id": "845"
+      },
+      {
+        "name": "Belgian-Style Lambic",
+        "id": "848"
+      },
+      {
+        "name": "Traditional Belgian-Style Gueuze",
+        "id": "979"
+      },
+      {
+        "name": "Contemporary Belgian-Style Spontaneous Fermented Ale",
+        "id": "876"
+      },
+      {
+        "name": "Other Belgian-Style Ale",
+        "id": "303"
+      },
+      {
+        "name": "Belgian-Style Fruit Beer",
+        "id": "846"
+      }
+    ]
+  },
+  {
+    "category": "Other Origin Ale Styles",
+    "styles": [
+      {
+        "name": "Grodziskie",
+        "id": "915"
+      },
+      {
+        "name": "Adambier",
+        "id": "808"
+      },
+      {
+        "name": "Dutch-Style Kuit, Kuyt or Koyt",
+        "id": "882"
+      },
+      {
+        "name": "International-Style Pale Ale",
+        "id": "919"
+      },
+      {
+        "name": "Classic Australian-Style Pale Ale",
+        "id": "868"
+      },
+      {
+        "name": "Australian-Style Pale Ale",
+        "id": "837"
+      },
+      {
+        "name": "New Zealand-Style Pale Ale",
+        "id": "937"
+      },
+      {
+        "name": "New Zealand-Style India Pale Ale",
+        "id": "936"
+      },
+      {
+        "name": "Finnish-Style Sahti",
+        "id": "894"
+      },
+      {
+        "name": "Swedish-Style Gotlandsdricke",
+        "id": "977"
+      },
+      {
+        "name": "Breslau-Style Schoeps",
+        "id": "859"
+      }
+    ]
+  },
+  {
+    "category": "Scottish Origin Ale Styles",
+    "styles": [
+      {
+        "name": "Scottish-Style Light Ale",
+        "id": "962"
+      },
+      {
+        "name": "Scottish-Style Heavy Ale",
+        "id": "961"
+      },
+      {
+        "name": "Scottish-Style Export Ale",
+        "id": "960"
+      },
+      {
+        "name": "Scotch Ale or Wee Heavy",
+        "id": "959"
+      }
+    ]
+  },
+  {
+    "category": "European Origin Lager Styles",
+    "styles": [
+      {
+        "name": "Czech-Style Pale Lager",
+        "id": "858"
+      },
+      {
+        "name": "Vienna-Style Lager",
+        "id": "981"
+      },
+      {
+        "name": "Baltic-Style Porter",
+        "id": "838"
+      },
+      {
+        "name": "Czech-Style Amber Lager",
+        "id": "1000"
+      },
+      {
+        "name": "Czech-Style Dark Lager",
+        "id": "1001"
+      },
+      {
+        "name": "Italian-Style Pilsener",
+        "id": "922"
+      }
+    ]
+  },
+  {
+    "category": "North American Origin Lager Styles",
+    "styles": [
+      {
+        "name": "American-Style Lager",
+        "id": "826"
+      },
+      {
+        "name": "Contemporary American-Style Lager",
+        "id": "873"
+      },
+      {
+        "name": "American-Style Light Lager",
+        "id": "827"
+      },
+      {
+        "name": "Contemporary American-Style Light Lager",
+        "id": "874"
+      },
+      {
+        "name": "American-Style Pilsener",
+        "id": "831"
+      },
+      {
+        "name": "Contemporary American-Style Pilsener",
+        "id": "875"
+      },
+      {
+        "name": "American-Style India Pale Lager",
+        "id": "825"
+      },
+      {
+        "name": "American-Style Malt Liquor",
+        "id": "829"
+      },
+      {
+        "name": "American-Style Amber Lager",
+        "id": "811"
+      },
+      {
+        "name": "American-Style Maerzen/Oktoberfest",
+        "id": "828"
+      },
+      {
+        "name": "American-Style Dark Lager",
+        "id": "817"
+      },
+      {
+        "name": "Mexican-Style Light Lager",
+        "id": "1002"
+      },
+      {
+        "name": "Mexican-Style Pale Lager",
+        "id": "1003"
+      },
+      {
+        "name": "Mexican-Style Amber Lager",
+        "id": "1004"
+      },
+      {
+        "name": "Mexican-Style Dark Lager",
+        "id": "1006"
+      },
+      {
+        "name": "West Coast-Style Pilsener",
+        "id": "1007"
+      }
+    ]
+  },
+  {
+    "category": "Other Origin Lager Styles",
+    "styles": [
+      {
+        "name": "International Light Lager",
+        "id": "836"
+      },
+      {
+        "name": "International-Style Pilsener",
+        "id": "920"
+      },
+      {
+        "name": "Rice Lager",
+        "id": "947"
+      }
+    ]
+  },
+  {
+    "category": "German Origin Lager Styles",
+    "styles": [
+      {
+        "name": "German-Style Leichtbier",
+        "id": "905"
+      },
+      {
+        "name": "German-Style Pilsener",
+        "id": "909"
+      },
+      {
+        "name": "Munich-Style Helles",
+        "id": "935"
+      },
+      {
+        "name": "Dortmunder/European-Style Export",
+        "id": "880"
+      },
+      {
+        "name": "Franconian-Style Rotbier",
+        "id": "806"
+      },
+      {
+        "name": "German-Style Maerzen",
+        "id": "907"
+      },
+      {
+        "name": "German-Style Oktoberfest/Festbier",
+        "id": "908"
+      },
+      {
+        "name": "Munich-Style Dunkel",
+        "id": "934"
+      },
+      {
+        "name": "European-Style Dark Lager",
+        "id": "887"
+      },
+      {
+        "name": "German-Style Schwarzbier",
+        "id": "911"
+      },
+      {
+        "name": "Bamberg-Style Helles Rauchbier",
+        "id": "840"
+      },
+      {
+        "name": "Bamberg-Style Maerzen Rauchbier",
+        "id": "841"
+      },
+      {
+        "name": "Bamberg-Style Bock Rauchbier",
+        "id": "839"
+      },
+      {
+        "name": "German-Style Heller Bock/Maibock",
+        "id": "903"
+      },
+      {
+        "name": "Traditional German-Style Bock",
+        "id": "980"
+      },
+      {
+        "name": "German-Style Doppelbock",
+        "id": "901"
+      },
+      {
+        "name": "German-Style Eisbock",
+        "id": "902"
+      }
+    ]
+  },
+  {
+    "category": "All Origin Hybrid/Mixed Lagers or Ale",
+    "styles": [
+      {
+        "name": "Belgian-Style Fruit Lambic",
+        "id": "847"
+      },
+      {
+        "name": "Session Beer",
+        "id": "963"
+      },
+      {
+        "name": "American-Style Cream Ale",
+        "id": "816"
+      },
+      {
+        "name": "California Common Beer",
+        "id": "865"
+      },
+      {
+        "name": "American-Style Wheat Beer",
+        "id": "300"
+      },
+      {
+        "name": "Kellerbier or Zwickelbier",
+        "id": "301"
+      },
+      {
+        "name": "Fruit Wheat Beer",
+        "id": "897"
+      },
+      {
+        "name": "Field Beer",
+        "id": "893"
+      },
+      {
+        "name": "Pumpkin Spice Beer",
+        "id": "955"
+      },
+      {
+        "name": "Pumpkin/Squash Beer",
+        "id": "956"
+      },
+      {
+        "name": "Chocolate or Cocoa Beer",
+        "id": "867"
+      },
+      {
+        "name": "Coffee Beer",
+        "id": "871"
+      },
+      {
+        "name": "Chili Pepper Beer",
+        "id": "866"
+      },
+      {
+        "name": "Herb and Spice Beer",
+        "id": "916"
+      },
+      {
+        "name": "Specialty Beer",
+        "id": "123"
+      },
+      {
+        "name": "Specialty Honey Beer",
+        "id": "974"
+      },
+      {
+        "name": "Rye Beer",
+        "id": "958"
+      },
+      {
+        "name": "Brett Beer",
+        "id": "860"
+      },
+      {
+        "name": "Mixed-Culture Brett Beer",
+        "id": "933"
+      },
+      {
+        "name": "Ginjo Beer or Sake-Yeast Beer",
+        "id": "912"
+      },
+      {
+        "name": "Fresh Hop Beer",
+        "id": "896"
+      },
+      {
+        "name": "Wood- and Barrel-Aged Sour Beer",
+        "id": "986"
+      },
+      {
+        "name": "Aged Beer",
+        "id": "809"
+      },
+      {
+        "name": "Experimental Beer",
+        "id": "888"
+      },
+      {
+        "name": "Experimental India Pale Ale",
+        "id": "889"
+      },
+      {
+        "name": "Historical Beer",
+        "id": "917"
+      },
+      {
+        "name": "Wild Beer",
+        "id": "983"
+      },
+      {
+        "name": "Smoke Beer",
+        "id": "965"
+      },
+      {
+        "name": "Other Strong Ale or Lager",
+        "id": "948"
+      },
+      {
+        "name": "Gluten-Free Beer",
+        "id": "913"
+      },
+      {
+        "name": "Non-Alcohol Malt Beverage",
+        "id": "938"
+      },
+      {
+        "name": "Dessert or Pastry Beer",
+        "id": "879"
+      }
+    ]
+  }
+]
+
 // 1. INITIALIZATION: Load Library & Check URL
 window.addEventListener('DOMContentLoaded', () => {
     fetchLibrary();
@@ -111,15 +846,41 @@ function renderBeer(data) {
     document.getElementById('recipeName').textContent = data.name;
     document.getElementById('brewerName').textContent = data.author || data.brewer || "Homebrewer";
 
+    // NEW: Handle Style Link with Anchor ID
+    let styleName = "Unknown Style";
+    let styleId = null;
+
+    if (design.style) {
+        if (typeof design.style === 'string') {
+            styleName = design.style;
+        } else {
+            styleName = design.style.name || "Unknown Style";
+            styleId = design.style.styleId;
+        }
+    }
+    
+    // Base URL
+    let baUrl = `https://www.brewersassociation.org/?s=${encodeURIComponent(styleName)}`;
+    
+    // If we have the specific ID, create the direct Anchor Link
+    if (styleId) {
+        baUrl = `https://www.brewersassociation.org/edu/brewers-association-beer-style-guidelines/#${styleId}`;
+    }
+    
+    const styleHtml = `<a href="${baUrl}" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:bold;">${styleName}</a>`;
+
     if (isBatch) {
         document.getElementById('batchNo').textContent = `Batch #${data.batchNo}`;
+        // Add the style link next to batch number
+        document.getElementById('batchNo').innerHTML += ` | ${styleHtml}`;
         document.getElementById('statusBadge').textContent = data.status || "Planned";
         document.getElementById('statusBadge').className = 'status-pill status-batch';
-        // Force Swedish locale ('sv-SE')
         document.getElementById('brewDate').textContent = data.brewDate ? new Date(data.brewDate).toLocaleDateString('sv-SE') : '';
         document.getElementById('btnStartBatch').textContent = "Edit Batch Data";
     } else {
         document.getElementById('batchNo').textContent = "Recipe Library";
+        // Add the style link next to "Recipe Library"
+        document.getElementById('batchNo').innerHTML += ` | ${styleHtml}`;
         document.getElementById('statusBadge').textContent = "Recipe Design";
         document.getElementById('statusBadge').className = 'status-pill status-recipe';
         document.getElementById('brewDate').textContent = "";
@@ -509,25 +1270,43 @@ function initRecipeBuilder() {
     document.querySelector('.upload-area').style.display = 'none';
     document.getElementById('dashboard').style.display = 'none';
     document.getElementById('recipeBuilder').style.display = 'block';
+
+    // --- NEW: Populate Style Dropdown with Categories ---
+    const styleSelect = document.getElementById('buildStyle');
+    styleSelect.innerHTML = '';
     
-    // Clear lists
-    document.getElementById('buildGrainList').innerHTML = '';
+    // Create a default "Select Style" option
+    const defaultOption = document.createElement('option');
+    defaultOption.text = "Select a Style";
+    styleSelect.add(defaultOption);
+
+    beerStyleData.forEach(group => {
+        // Create an <optgroup> for the Category (e.g., "British Origin")
+        const groupEl = document.createElement('optgroup');
+        groupEl.label = group.category;
+        
+        group.styles.forEach(style => {
+            const option = document.createElement('option');
+            // We save the ID as the value, and Name as the text
+            option.value = style.id; 
+            option.textContent = style.name;
+            // Store the name in a data attribute so we can grab it later easily
+            option.setAttribute('data-name', style.name);
+            groupEl.appendChild(option);
+        });
+        
+        styleSelect.appendChild(groupEl);
+    });
+    
+    // ... rest of init function ...
+    document.getElementById('buildFermList').innerHTML = '';
     document.getElementById('buildHopList').innerHTML = '';
-    
-    // NEW: Clear new lists
     document.getElementById('buildMiscList').innerHTML = '';
     document.getElementById('buildMashList').innerHTML = '';
-    document.getElementById('buildFermStepList').innerHTML = '';
+    document.getElementById('buildFermList').innerHTML = ''; // Ensure IDs are unique in HTML as discussed before
     
-    // Add default ingredients
-    addGrainRow(5, "Pale Ale Malt", 5, 1.038); 
+    addFermRow(5, "Pale Ale Malt", 5, 1.038); 
     addHopRow(20, "Magnum", 12, 60, "Boil");
-    
-    // NEW: Add Defaults for new sections
-    addMiscRow(5, "ml", "Lactic Acid", "Water Agent", "Mash");
-    addMashStepRow("Mash In", 65, 60);
-    addFermStepRow("Primary", 20, 14);
-    
     recalc();
 }
 
@@ -596,7 +1375,7 @@ function addMiscRow(amt='', unit='g', name='', type='Other', use='Boil') {
                 <option value="Primary" ${use==='Primary'?'selected':''}>Primary</option>
                 <option value="Bottling" ${use==='Bottling'?'selected':''}>Bottling</option>
             </select>
-        </td>
+        /td>
         <td><button class="btn-remove" onclick="this.closest('tr').remove()">X</button></td>
     `;
     tbody.appendChild(row);
@@ -739,6 +1518,14 @@ function saveBuiltRecipe() {
         _type: "recipe",
         name: document.getElementById('buildName').value,
         author: document.getElementById('buildAuthor').value,
+        
+        // NEW: Save both Name and ID
+        style: { 
+            name: selectedOption.getAttribute('data-name') || "Unknown Style",
+            styleGuide: "Brewers Association",
+            styleId: selectedOption.value // This is the anchor ID (e.g., "941")
+        },
+        
         batchSize: parseFloat(document.getElementById('buildBatchSize').value),
         efficiency: parseFloat(document.getElementById('buildEff').value),
         boilTime: parseFloat(document.getElementById('buildBoilTime').value),
