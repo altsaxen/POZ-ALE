@@ -30,6 +30,18 @@
     <div id="dashboard" style="display:none;">
         <button class="back-button" onclick="showLibrary()">← Back to Beer Menu</button>
         <header>
+            <div id="styleDetailsCard" class="style-details-card" style="display:none;">
+                <div class="style-card-header">
+                    <h2 id="sdName">Style Name</h2>
+                    <button class="btn-remove" onclick="document.getElementById('styleDetailsCard').style.display='none'">Close</button>
+                </div>
+                
+                <div class="style-grid" id="sdGrid">
+                    </div>
+
+                <div class="style-stats-bar" id="sdStats">
+                    </div>
+            </div>
             <div>
                 <h1 id="recipeName">Batch Name</h1>
                 <div class="batch-meta">
